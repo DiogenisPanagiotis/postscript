@@ -155,15 +155,23 @@ select {
 
 .media-preview-container {
   margin-top: 20px;
-  padding: 10px;
+  padding: 20px;
   background: #FEF5EA;
-  width: 485px;
+  width: 105px;
 }
 
 .media-preview {
   display: block;
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+}
+
+span {
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  padding: 20px 0px 0px;
 }
 
 .cancel-button, .save-button {

@@ -32,7 +32,8 @@ const Media = (props) => {
             {props.renderTagButton()}
             {props.renderTags()}
             <div className="media-preview-container">
-                <img className="media-preview" alt="" ref={uploadedImage} src={props.media ? props.media : null}/>
+                <img className="media-preview" alt="" ref={uploadedImage} src={props.media ? props.media : 'http://placehold.jp/ffffff/000000/150x150.png'}/>
+                <span>Media Preview</span>
             </div>
         </div>
     );
