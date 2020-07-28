@@ -15,13 +15,14 @@ class Main extends Component {
     }
 
     toggleCreate = () => {
-        if (this.state.campaignToEdit) {
+        const { campaignToEdit, create } = this.state;
+        if (campaignToEdit) {
             this.setState({
                 campaignToEdit: null,
             });
         }
         this.setState({
-            create: !this.state.create,
+            create: !create,
         });
     }
 
@@ -33,8 +34,8 @@ class Main extends Component {
     }
 
     renderCreateButton = () => {
-        const { focus } = this.props;
-        if (!this.state.create) {
+        const { create, focus } = this.state;
+        if (!create) {
             return (
                 <div className="create-button" onClick={this.toggleCreate}>Create {focus.slice(0, -1)}</div>
             );
@@ -54,8 +55,7 @@ class Main extends Component {
     }
 
     render() {
-        const { focus } = this.props;
-        const { create, campaigns, campaignToEdit } = this.state;
+        const { focus, create, campaigns, campaignToEdit } = this.state;
         return (
             <div className="main">
                 <div className="category">{create ? `${focus} > Create ${focus}` : focus}</div>

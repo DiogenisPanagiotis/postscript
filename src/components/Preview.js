@@ -7,8 +7,6 @@ class Preview extends Component {
         this.state = {
             current: null,
         };
-        this.sendCampaign = this.sendCampaign.bind(this);
-        this.draftCampaign = this.draftCampaign.bind(this);
     }
 
     sendCampaign = () => {
@@ -73,7 +71,7 @@ class Preview extends Component {
                 </div>
                 <div className="preview-container">
                     <div className="preview-media-tag">Media: </div>
-                    <div className="preview-media">{`${media.slice(0, 39)}...`}</div>
+                    <div className="preview-media">{`${media ? `${media.slice(0, 39)}...` : ''}`}</div>
                 </div>
                 <div className="cancel-button" onClick={this.draftCampaign}>Back to Campaigns (Save Draft)</div>
                 <div className="save-button" onClick={this.sendCampaign}>Send Campaign!</div>

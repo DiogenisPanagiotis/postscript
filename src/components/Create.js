@@ -152,9 +152,7 @@ class Create extends Component {
 
     render() {
         return (
-            <div className="create">
-                {this.renderContent()}
-            </div>
+            <div className="create">{this.renderContent()}</div>
         );
     }
 }
