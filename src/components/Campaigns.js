@@ -10,11 +10,14 @@ class Campaigns extends Component {
             <div>
                 {campaigns.map((campaign, idx) => {
                     if (campaign.status === status) {
+                        const stats = campaign.stats ? campaign.stats : null;
                         return (
                             <div className="campaign-group" key={idx}>
                                 <div className="campaign-title">{`${campaign.name}`}</div>
                                 <div className={`campaign-status-${campaign.status.toLowerCase()}`}>{`${campaign.status}`}</div>
-                               {campaign.status === 'Preview' ? <div className="campaign-edit" onClick={editCampaign.bind(this, idx)}>Edit</div> : null}
+                                {campaign.status === 'Sent' ? <div className="campaign-sent">{`${stats ? stats.sent : 0} (Sent)`}</div> : null}
+                                {campaign.status === 'Sent' ? <div className="campaign-clicked">{`${stats ? stats.clicked : 0} (Clicked)`}</div> : null}
+                                {campaign.status === 'Preview' ? <div className="campaign-edit" onClick={editCampaign.bind(this, idx)}>Edit</div> : null}
                             </div>
                         );
                     }

@@ -12,11 +12,11 @@ const Media = (props) => {
             const { current } = uploadedImage;
             current.file = file;
             reader.onload = e => {
-            current.src = e.target.result;
+                current.src = e.target.result;
+                props.fetchMedia(uploadedImage.current.getAttribute('src'));
             };
             reader.readAsDataURL(file);
         }
-        props.fetchMedia(uploadedImage.current.file.name);
     };
 
     return (
@@ -32,7 +32,7 @@ const Media = (props) => {
             {props.renderTagButton()}
             {props.renderTags()}
             <div className="media-preview-container">
-                <img className="media-preview" alt="" ref={uploadedImage} src={props.media ? props.media : 'http://placehold.jp/ffffff/000000/150x150.png'}/>
+                <img className="media-preview" alt="" ref={uploadedImage} src={props.media ? props.media : 'http://placehold.jp/ffffff/000000/150x150.png'} />
                 <span>Media Preview</span>
             </div>
         </div>

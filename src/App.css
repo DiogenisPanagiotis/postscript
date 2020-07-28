@@ -220,7 +220,7 @@ span {
   font-size: 16px;
 }
 
-.campaign-status-preview, .campaign-status-sent {
+.campaign-status-preview, .campaign-status-sent, .campaign-sent, .campaign-clicked {
   display: inline;
   margin-left: 5px;
   padding: 10px;
@@ -231,7 +231,7 @@ span {
 }
 
 .campaign-status-sent {
-  background-color: #4ebf31;
+  background-color: #20BC9C;
 }
 
 .campaign-edit {
@@ -248,4 +248,12 @@ span {
   cursor: pointer;
   background-color: #011476;
   color: #fff;
+}
+
+.campaign-sent {
+  background-color: #F1C42E;
+}
+
+.campaign-clicked {
+  background-color: #F29C24;
 }

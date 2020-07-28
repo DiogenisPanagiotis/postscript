@@ -44,8 +44,6 @@ class Main extends Component {
     saveCampaign = (newCampaign, id) => {
             const { campaigns } = this.state;
             const updatedCampaigns = [...campaigns];
-            console.log(newCampaign.id, "what number is this?")
-            console.log("what id is passed?", id)
             updatedCampaigns[newCampaign.id] = newCampaign;
             if (id) {
                 updatedCampaigns[newCampaign.id].id = id;
@@ -58,7 +56,6 @@ class Main extends Component {
     render() {
         const { focus } = this.props;
         const { create, campaigns, campaignToEdit } = this.state;
-        console.log(this.state)
         return (
             <div className="main">
                 <div className="category">{create ? `${focus} > Create ${focus}` : focus}</div>
